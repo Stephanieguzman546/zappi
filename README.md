@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Zappi ✨
 
-## Getting Started
+*A bridge from phone number to chat.*  
+Paste a number → hit the button → the dialog opens. No **“save contact”** hassle. ⚡
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What it is 🧩
+Frontend-only web app. No server, no database. Everything runs in the browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## How it works ▶️
+1. Paste or type a number (parentheses, spaces, dashes allowed).  
+2. We clean & normalize it (incl. **8→7** for RU/KZ).  
+3. Tap **Open WhatsApp** — universal link opens the chat on mobile or desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Interface 🖥️
+- **Number field** + **Paste** (input group)  
+- **Open WhatsApp** (primary CTA)  
+- **Additional** (collapse) → multiline message  
+- **History** (collapse) → recent numbers: insert / delete / clear  
+- Inline error messages under the field
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## UI copy ✍️
+- **Title:** *Zappi — instant to WhatsApp*  
+- **Subtitle:** *Paste a number — we’ll open the chat without saving a contact.*  
+- **Placeholder:** *Enter a number: e.g., +7 707 123-45-67*  
+- **Buttons:** *Paste*, *Open WhatsApp*, *Additional*, *History*, *Clear all*  
+- **Error:** *This doesn’t look like an international number. Check length and country code.*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## What it does now ✅
+- Parses from clipboard & strips extra characters  
+- Normalizes local formats (incl. RU/KZ)  
+- Validates length against international standard  
+- Adds an optional pre-filled message to the chat  
+- Stores recent numbers **locally** (on the user’s device)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Screenshot 🖼️
+![Zappi screenshot](./public/screenshot.png "Zappi interface")
+
+---
+
+## Limitations ⚠️
+- No cloud sync: history/settings don’t travel across devices  
+- Deep links vary by platform — universal links favored for stability  
+- Very long messages can hit URL length limits in some browsers
+
+---
+
+## Next (frontend-only roadmap) 🚀
+- [ ] **PWA**: install to home screen, offline static assets  
+- [ ] **QR**: generate PNG/SVG, “Download”  
+- [ ] **Channels**: Telegram / Viber / SMS / Email (switcher)  
+- [ ] **Batch**: paste a list → open dialogs sequentially  
+- [ ] **Pages**: mini “link-in-bio” via URL parameters  
+- [ ] **Widget**: “Message us” embed for any website  
+- [ ] **i18n**: RU/EN toggle & local storage
+
+---
+
+## Branding 🎨
+- **Wordmark:** “Zappi” in black  
+- **Mark:** lightning bolt (accent/gradient per brand guide)  
+- **Assets:** transparent backgrounds for logos/icons  
+- **Favicon:** single source at `/favicon.ico` (avoid conflicts)
+
+---
+
+## License 📄
+**MIT** — see `LICENSE`.
